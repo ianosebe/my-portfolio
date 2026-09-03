@@ -1,4 +1,4 @@
-﻿// src/pages/Projects.jsx
+// src/pages/Projects.jsx
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const allProjects = [
@@ -46,6 +46,15 @@ const allProjects = [
     github: 'https://github.com/ianosebe/Driving-school-system',
     live: 'https://driving-school-system-gray.vercel.app/',
     gradient: 'from-indigo-500 to-blue-600',
+  },
+  {
+    id: 6,
+    title: 'Timberyard Website',
+    description: 'A modern, responsive business website for a timberyard with product showcasing and contact information.',
+    tech: ['React', 'Tailwind CSS', 'Vite'],
+    github: '#',
+    live: 'https://mily-ian-junior-timberyard-website-phi.vercel.app',
+    gradient: 'from-yellow-500 to-orange-600',
   }
 ];
 
@@ -68,34 +77,40 @@ export default function Projects() {
 
         <div className="grid gap-10 lg:grid-cols-2">
           {allProjects.map((project) => (
-            <article key={project.id} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/85 p-1 shadow-2xl shadow-slate-950/40 transition hover:-translate-y-1 hover:shadow-slate-950/60">
-              <div className="h-full rounded-[1.75rem] bg-slate-950 p-8">
+            <article key={project.id} className="group relative overflow-hidden rounded-[2rem] border border-black/10 bg-white p-1 shadow-2xl shadow-slate-950/40 transition hover:-translate-y-1 hover:shadow-slate-950/60 font-sans text-black">
+              <div className="h-full rounded-[1.75rem] bg-white p-8">
                 <div className={`mb-6 flex h-44 items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r ${project.gradient} text-white`}>
-                  <span className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">Project Preview</span>
+                  <span className="text-sm font-semibold uppercase tracking-[0.32em] text-white/90">Project Preview</span>
                 </div>
 
-                <h2 className="text-2xl font-semibold tracking-tight text-white transition group-hover:text-indigo-400">
+                <h2 className="text-2xl font-semibold tracking-tight text-black transition group-hover:text-indigo-600">
                   {project.title}
                 </h2>
-                <p className="mt-4 text-base leading-7 text-slate-300">
+                <p className="mt-4 text-base leading-7 text-slate-700">
                   {project.description}
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tag) => (
-                    <span key={tag} className="rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+                    <span key={tag} className="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-800 bg-slate-900 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-indigo-400 hover:bg-slate-800 hover:text-white">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-black transition hover:border-indigo-400 hover:bg-slate-50 hover:text-indigo-600">
                     <FaGithub className="h-4 w-4" /> Code
                   </a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500">
-                    <FaExternalLinkAlt className="h-4 w-4" /> Live Demo
-                  </a>
+                  {project.live && project.live !== '#' ? (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500">
+                      <FaExternalLinkAlt className="h-4 w-4" /> Live Demo
+                    </a>
+                  ) : (
+                    <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-500 cursor-not-allowed">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
             </article>

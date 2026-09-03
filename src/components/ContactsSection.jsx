@@ -1,4 +1,4 @@
-﻿// src/components/ContactsSection.jsx
+// src/components/ContactsSection.jsx
 import { Link } from 'react-router-dom';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -36,34 +36,34 @@ export default function ContactsSection() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Contact details</p>
+          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl font-sans text-black">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Contact details</p>
             <div className="mt-8 space-y-6">
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-950/80 p-5">
+              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
                 <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
                   <FaEnvelope className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">Email</p>
-                  <p className="mt-1 text-slate-400">ianosebe8@gmail.com</p>
+                  <p className="text-sm font-semibold text-black">Email</p>
+                  <p className="mt-1 text-slate-600">ianosebe8@gmail.com</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-950/80 p-5">
+              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
                 <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
                   <FaPhoneAlt className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">Phone</p>
-                  <p className="mt-1 text-slate-400">+254 716 334 678</p>
+                  <p className="text-sm font-semibold text-black">Phone</p>
+                  <p className="mt-1 text-slate-600">+254 716 334 678</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-950/80 p-5">
+              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
                 <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
                   <FaMapMarkerAlt className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">Location</p>
-                  <p className="mt-1 text-slate-400">Nairobi, Kenya</p>
+                  <p className="text-sm font-semibold text-black">Location</p>
+                  <p className="mt-1 text-slate-600">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-﻿import aboutImg from '../assets/about.jfif';
+import aboutImg from '../assets/about.jfif';
 
 export default function About() {
   return (
@@ -20,13 +20,13 @@ export default function About() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/75 p-6 shadow-xl shadow-slate-950/30">
-                <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Years of experience</p>
-                <p className="mt-4 text-3xl font-semibold text-white">5+</p>
+              <div className="rounded-[1.75rem] border border-black/10 bg-white p-6 shadow-xl shadow-slate-950/30 text-black font-sans">
+                <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Years of experience</p>
+                <p className="mt-4 text-3xl font-semibold text-black">5+</p>
               </div>
-              <div className="rounded-[1.75rem] border border-white/10 bg-slate-900/75 p-6 shadow-xl shadow-slate-950/30">
-                <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Projects launched</p>
-                <p className="mt-4 text-3xl font-semibold text-white">50+</p>
+              <div className="rounded-[1.75rem] border border-black/10 bg-white p-6 shadow-xl shadow-slate-950/30 text-black font-sans">
+                <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Projects launched</p>
+                <p className="mt-4 text-3xl font-semibold text-black">50+</p>
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
-﻿// src/components/Hero.jsx
-import heroBg from '../assets/hero1.jfif';
+// src/components/Hero.jsx
 import { NavLink } from 'react-router-dom';
 import { FiArrowRight, FiBriefcase, FiUsers, FiCheckCircle } from 'react-icons/fi';
 
@@ -44,17 +43,17 @@ export default function Hero() {
             </div>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl shadow-slate-950/30">
-                <p className="text-sm uppercase tracking-[0.26em] text-slate-400">Experience</p>
-                <p className="mt-4 text-3xl font-semibold text-white">5+ years</p>
+              <div className="rounded-3xl border border-black/10 bg-white p-5 shadow-xl shadow-slate-950/30 text-black font-sans">
+                <p className="text-sm uppercase tracking-[0.26em] text-slate-500">Experience</p>
+                <p className="mt-4 text-3xl font-semibold text-black">5+ years</p>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl shadow-slate-950/30">
-                <p className="text-sm uppercase tracking-[0.26em] text-slate-400">Projects delivered</p>
-                <p className="mt-4 text-3xl font-semibold text-white">50+</p>
+              <div className="rounded-3xl border border-black/10 bg-white p-5 shadow-xl shadow-slate-950/30 text-black font-sans">
+                <p className="text-sm uppercase tracking-[0.26em] text-slate-500">Projects delivered</p>
+                <p className="mt-4 text-3xl font-semibold text-black">50+</p>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-xl shadow-slate-950/30">
-                <p className="text-sm uppercase tracking-[0.26em] text-slate-400">Client satisfaction</p>
-                <p className="mt-4 text-3xl font-semibold text-white">Trusted</p>
+              <div className="rounded-3xl border border-black/10 bg-white p-5 shadow-xl shadow-slate-950/30 text-black font-sans">
+                <p className="text-sm uppercase tracking-[0.26em] text-slate-500">Client satisfaction</p>
+                <p className="mt-4 text-3xl font-semibold text-black">Trusted</p>
               </div>
             </div>
           </div>

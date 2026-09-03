@@ -1,4 +1,4 @@
-﻿// src/components/SkillsSection.jsx
+// src/components/SkillsSection.jsx
 import { Link } from 'react-router-dom';
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript, SiVite } from 'react-icons/si';
@@ -36,11 +36,11 @@ export default function SkillsSection() {
           {topSkills.map((skill) => {
             const Icon = skill.icon;
             return (
-              <div key={skill.name} className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-7 text-center shadow-xl shadow-slate-950/30 transition hover:-translate-y-1 hover:border-indigo-400/30">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-slate-950/90 text-4xl shadow-inner shadow-slate-950/20">
+              <div key={skill.name} className="rounded-[2rem] border border-black/10 bg-white p-7 text-center shadow-xl shadow-slate-950/30 transition hover:-translate-y-1 hover:border-indigo-400/30 font-sans text-black">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-slate-100 text-4xl shadow-inner shadow-slate-950/20">
                   <Icon className={`${skill.color}`} />
                 </div>
-                <p className="mt-6 text-base font-semibold text-white">{skill.name}</p>
+                <p className="mt-6 text-base font-semibold text-black">{skill.name}</p>
               </div>
             );
           })}

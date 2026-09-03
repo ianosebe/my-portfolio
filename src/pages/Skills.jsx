@@ -1,4 +1,4 @@
-﻿// src/pages/Skills.jsx
+// src/pages/Skills.jsx
 import { 
   FaReact, 
   FaHtml5, 
@@ -74,17 +74,17 @@ export default function Skills() {
 
         <div className="grid gap-12">
           {skillCategories.map((category) => (
-            <div key={category.title} className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
+            <div key={category.title} className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl font-sans text-black">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                  <h2 className="text-2xl font-semibold text-white">{category.title}</h2>
-                  <p className="mt-3 max-w-2xl text-slate-400">
+                  <h2 className="text-2xl font-semibold text-black">{category.title}</h2>
+                  <p className="mt-3 max-w-2xl text-slate-600">
                     {category.title === 'Frontend Development' && 'Modern UI development with component-driven architecture and responsive styling.'}
                     {category.title === 'Backend & Databases' && 'Server-side and database technologies for reliable and scalable applications.'}
                     {category.title === 'Tools & Workflow' && 'Developer tooling and collaboration workflows that keep projects moving smoothly.'}
                   </p>
                 </div>
-                <span className="inline-flex rounded-full bg-indigo-500/15 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">
+                <span className="inline-flex rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600">
                   {category.skills.length} items
                 </span>
               </div>
@@ -93,11 +93,11 @@ export default function Skills() {
                 {category.skills.map((skill) => {
                   const Icon = skill.icon;
                   return (
-                    <div key={skill.name} className="group rounded-[1.75rem] border border-white/10 bg-slate-950/80 p-6 text-center transition hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-slate-900/95">
-                      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-slate-900 text-4xl shadow-inner shadow-slate-950/20">
+                    <div key={skill.name} className="group rounded-[1.75rem] border border-black/10 bg-slate-50 p-6 text-center transition hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-slate-100 text-black">
+                      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-white text-4xl shadow-inner shadow-slate-950/20">
                         <Icon className={`${skill.color}`} />
                       </div>
-                      <p className="mt-5 text-base font-semibold text-white">{skill.name}</p>
+                      <p className="mt-5 text-base font-semibold text-black">{skill.name}</p>
                     </div>
                   );
                 })}

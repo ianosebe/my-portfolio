@@ -1,4 +1,4 @@
-﻿import { FaAward, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaAward, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Certificates() {
   const certificates = [
@@ -46,6 +46,17 @@ export default function Certificates() {
       color: 'text-indigo-400',
       iconBg: 'bg-indigo-500/10',
     },
+    {
+      id: 5,
+      title: 'AWS Billing and Cost Management',
+      issuer: 'Simplilearn / AWS',
+      date: 'August 2026',
+      description:
+        'Comprehensive understanding of AWS billing, cost management tools, and strategies for optimizing cloud expenses.',
+      link: '#',
+      color: 'text-amber-500',
+      iconBg: 'bg-amber-500/10',
+    },
   ];
 
   return (
@@ -68,23 +79,23 @@ export default function Certificates() {
           {certificates.map((cert) => (
             <article
               key={cert.id}
-              className="group rounded-[2rem] border border-white/10 bg-slate-900/85 p-8 shadow-2xl shadow-slate-950/40 transition hover:-translate-y-1 hover:border-indigo-400/30"
+              className="group rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 transition hover:-translate-y-1 hover:border-indigo-400/30 font-sans text-black"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className={`flex h-14 w-14 items-center justify-center rounded-3xl ${cert.iconBg}`}>
                   <FaAward className={`text-3xl ${cert.color}`} />
                 </div>
-                <span className="rounded-full border border-slate-800 bg-slate-950/70 px-3 py-1 text-xs uppercase tracking-[0.28em] text-slate-400">
+                <span className="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs uppercase tracking-[0.28em] text-slate-600">
                   {cert.date}
                 </span>
               </div>
 
               <div className="mt-8 space-y-4">
-                <h3 className="text-2xl font-semibold text-white transition group-hover:text-indigo-300">
+                <h3 className="text-2xl font-semibold text-black transition group-hover:text-indigo-600">
                   {cert.title}
                 </h3>
-                <p className="text-sm font-semibold text-indigo-300">Issued by: {cert.issuer}</p>
-                <p className="text-slate-300 leading-relaxed">{cert.description}</p>
+                <p className="text-sm font-semibold text-indigo-600">Issued by: {cert.issuer}</p>
+                <p className="text-slate-700 leading-relaxed">{cert.description}</p>
               </div>
 
               <a

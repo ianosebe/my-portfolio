@@ -55,6 +55,24 @@ const allProjects = [
     github: '#',
     live: 'https://mily-ian-junior-timberyard-website-phi.vercel.app',
     gradient: 'from-yellow-500 to-orange-600',
+  },
+  {
+    id: 7,
+    title: 'Kazi Mashinani Kisii County Government',
+    description: 'Platform that provides employment opportunities to people in Kisii to work for the government in different departments like community service.',
+    tech: ['HTML', 'JavaScript'],
+    github: '#',
+    live: 'https://resonant-lebkuchen-243bfa.netlify.app/',
+    gradient: 'from-green-500 to-emerald-600',
+  },
+  {
+    id: 8,
+    title: 'Nyanchwa SDA Church Website',
+    description: 'A dynamic and engaging platform for the Nyanchwa SDA Church community, featuring event updates, spiritual resources, and announcements.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/ianosebe/Nyanchwa-SDA-Dynamic-Website',
+    live: 'https://nyanchwa-sda-dynamic-website.vercel.app/',
+    gradient: 'from-blue-500 to-cyan-600',
   }
 ];
 

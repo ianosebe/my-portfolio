@@ -73,6 +73,15 @@ const allProjects = [
     github: 'https://github.com/ianosebe/Nyanchwa-SDA-Dynamic-Website',
     live: 'https://nyanchwa-sda-dynamic-website.vercel.app/',
     gradient: 'from-blue-500 to-cyan-600',
+  },
+  {
+    id: 9,
+    title: "Victor & Brother's Ltd",
+    description: "A modern, responsive business website for Victor & Brother's Ltd.",
+    tech: ['React', 'Tailwind CSS', 'Vite'],
+    github: '#',
+    live: 'https://victor-brothers-ltd.vercel.app/',
+    gradient: 'from-slate-600 to-slate-800',
   }
 ];
 

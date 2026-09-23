@@ -1,7 +1,7 @@
 // src/components/FadeIn.jsx
 import { useEffect, useRef, useState } from 'react';
 
-export function useFadeIn(threshold = 0.15) {
+function useFadeIn(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   

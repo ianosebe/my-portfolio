@@ -40,7 +40,7 @@ export default function Navbar() {
             className="rounded border border-[#d4af37] bg-transparent px-6 py-2 text-sm font-semibold tracking-widest text-[#d4af37] transition hover:bg-[#d4af37] hover:text-black uppercase"
           >
             Hire Me
-          </NavLink>
+          </a>
         </div>
 
         <button

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
+  { name: 'HOME', path: '/' },
   { name: 'ABOUT', path: '/about' },
   { name: 'SKILLS', path: '/skills' },
   { name: 'CERTIFICATES', path: '/certificates' },
@@ -26,12 +27,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full bg-[#050505]/95 backdrop-blur-md border-b border-white/5">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6">
-        <NavLink to="/" className="flex items-center text-3xl font-bold font-serif text-white tracking-tight">
-          Ian<span className="text-[#d4af37]">.</span>
-        </NavLink>
-
         <div className="hidden lg:flex items-center gap-10">
-          {navItems.slice(0, 4).map((item) => (
+          {navItems.slice(0, 5).map((item) => (
             <NavLink key={item.name} to={item.path} className={linkClass}>
               {item.name}
             </NavLink>

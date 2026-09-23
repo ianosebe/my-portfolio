@@ -1,81 +1,104 @@
 // src/pages/About.jsx
 import aboutImg from '../assets/about.jfif';
+import FadeIn from '../components/FadeIn';
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-slate-950/90 to-slate-950/70" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-indigo-400">
-            About
-          </p>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Crafting thoughtful digital products with a polished front-end experience.
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            I build modern web applications with strong UX, maintainable code, and performance-first design. My focus is on solutions that look premium, feel smooth, and scale cleanly.
-          </p>
-        </div>
-
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_0.85fr] items-center">
-          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl font-sans text-black">
-            <div className="grid gap-6 lg:grid-cols-2">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-semibold text-black">About my work</h2>
-                <p className="text-slate-700 leading-8">
-                  I bridge design and engineering to create web products that are both beautiful and reliable. Every project is built with clarity, accessibility, and performance in mind.
-                </p>
-                <p className="text-slate-700 leading-8">
-                  My toolkit includes React, Tailwind CSS, and modern front-end patterns that keep development efficient and maintainable.
-                </p>
-              </div>
-
-              <div className="space-y-5 rounded-[1.75rem] border border-black/10 bg-slate-100 p-6 text-black">
-                <p className="text-sm uppercase tracking-[0.28em] text-indigo-600">Core strengths</p>
-                <ul className="space-y-4 text-slate-700">
-                  <li className="rounded-2xl bg-white border border-black/10 p-4">React & component-driven architecture</li>
-                  <li className="rounded-2xl bg-white border border-black/10 p-4">Responsive UI with Tailwind CSS</li>
-                  <li className="rounded-2xl bg-white border border-black/10 p-4">Fast, accessible web experiences</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-black/10 bg-slate-100 p-5 text-center text-black">
-                <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Experience</p>
-                <p className="mt-4 text-3xl font-semibold text-black">5+ years</p>
-              </div>
-              <div className="rounded-3xl border border-black/10 bg-slate-100 p-5 text-center text-black">
-                <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Projects</p>
-                <p className="mt-4 text-3xl font-semibold text-black">50+</p>
-              </div>
-              <div className="rounded-3xl border border-black/10 bg-slate-100 p-5 text-center text-black">
-                <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Clients</p>
-                <p className="mt-4 text-3xl font-semibold text-black">Trusted</p>
-              </div>
+    <section id="about" className="py-32 px-6 lg:px-12 bg-[var(--background)] min-h-screen pt-40 pb-32" style={{ borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-3">
+            <div className="lg:sticky lg:top-28">
+              <FadeIn>
+                <span
+                  className="font-mono text-xs tracking-widest uppercase inline-flex items-center gap-2"
+                  style={{ color: "var(--accent)" }}
+                >
+                  <span style={{ fontSize: "6px" }}>◆</span> 01 / About
+                </span>
+              </FadeIn>
             </div>
           </div>
 
-          <div className="mx-auto max-w-xl rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/30 backdrop-blur-xl sm:p-10 font-sans text-black">
-            <div className="overflow-hidden rounded-[1.75rem] bg-slate-100 p-6">
-              <img src={aboutImg} alt="Portrait of me" className="h-full w-full rounded-[1.25rem] object-cover" />
-            </div>
-            <div className="mt-8 space-y-4 text-slate-700">
-              <p>
-                I enjoy working with founders, teams, and brands who want a polished, modern web presence. I'm especially passionate about clean interfaces, performance, and accessible product experiences.
+          <div className="lg:col-span-5">
+            <FadeIn delay={100}>
+              <h2 className="font-display text-5xl lg:text-6xl leading-tight mb-8 text-white">
+                Crafting <br />thoughtful<br />digital <em className="italic">products.</em>
+              </h2>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <p className="text-base leading-relaxed mb-5" style={{ color: "var(--secondary-foreground)", lineHeight: "1.8" }}>
+                I build modern web applications with strong UX, maintainable code, and performance-first design. My focus is on solutions that look premium, feel smooth, and scale cleanly.
               </p>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-3xl border border-black/10 bg-slate-100 p-4 text-center">
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Location</p>
-                  <p className="mt-2 font-semibold text-black">Nairobi</p>
-                </div>
-                <div className="rounded-3xl border border-black/10 bg-slate-100 p-4 text-center">
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Availability</p>
-                  <p className="mt-2 font-semibold text-black">Open for work</p>
+              <p className="text-base leading-relaxed mb-10" style={{ color: "var(--secondary-foreground)", lineHeight: "1.8" }}>
+                I bridge design and engineering to create web products that are both beautiful and reliable. Every project is built with clarity, accessibility, and performance in mind using React, Tailwind CSS, and modern front-end patterns.
+              </p>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  { label: "Location", value: "Nairobi, KE" },
+                  { label: "Experience", value: "5+ Years" },
+                  { label: "Focus", value: "Frontend & UI" },
+                  { label: "Status", value: "Available" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="px-4 py-3"
+                    style={{
+                      backgroundColor: "var(--secondary)",
+                      border: "1px solid var(--border)",
+                    }}
+                  >
+                    <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: "var(--muted-foreground)" }}>
+                      {item.label}
+                    </p>
+                    <p className="font-semibold text-sm text-white">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+
+          <div className="lg:col-span-4">
+            <FadeIn delay={150}>
+              <div
+                className="relative overflow-hidden"
+                style={{ aspectRatio: "3/4", backgroundColor: "var(--secondary)" }}
+              >
+                <img
+                  src={aboutImg}
+                  alt="Portrait of me"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  style={{ objectPosition: "center top" }}
+                />
+                {/* gold frame accent */}
+                <div
+                  className="absolute top-4 right-4 w-16 h-16 pointer-events-none"
+                  style={{
+                    borderTop: "2px solid var(--accent)",
+                    borderRight: "2px solid var(--accent)",
+                    opacity: 0.6,
+                  }}
+                />
+                <div
+                  className="absolute bottom-4 left-4 w-16 h-16 pointer-events-none"
+                  style={{
+                    borderBottom: "2px solid var(--accent)",
+                    borderLeft: "2px solid var(--accent)",
+                    opacity: 0.6,
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-5"
+                  style={{ background: "linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%)" }}
+                >
+                  <p className="font-mono text-xs tracking-widest uppercase" style={{ color: "var(--muted-foreground)" }}>
+                    Software Engineer · 2025
+                  </p>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>

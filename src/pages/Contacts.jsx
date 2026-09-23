@@ -1,8 +1,13 @@
 // src/pages/Contacts.jsx
+import { useState } from 'react';
 import { BsWhatsapp } from 'react-icons/bs';
-import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import FadeIn from '../components/FadeIn';
 
 export default function Contacts() {
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
   const contactInfo = {
     email: 'ianosebe8@gmail.com',
     location: 'Nairobi, Kenya',
@@ -12,108 +17,266 @@ export default function Contacts() {
     whatsapp: 'https://wa.me/254716334678',
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-slate-950/90 to-slate-950/70" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-400">
-            Contact
-          </p>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Let&apos;s build something great together.
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Whether you have a project, a partnership, or a new idea, I&apos;m always open to a conversation. Reach out and let&apos;s create a professional web experience that delivers.
-          </p>
-        </div>
+    <section className="bg-[var(--background)] min-h-screen pt-40 pb-32 px-6 lg:px-12 relative overflow-hidden" style={{ borderTop: "1px solid var(--border)" }}>
+      {/* ambient glow */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "0", right: "-10%", width: "500px", height: "500px",
+          background: "radial-gradient(circle, rgba(212,168,83,0.07) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
 
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.8fr] items-center">
-          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl font-sans text-black">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Contact details</p>
-            <div className="mt-8 space-y-6">
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
-                <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
-                  <FaEnvelope className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-black">Email</p>
-                  <a href={`mailto:${contactInfo.email}`} className="mt-1 block text-slate-600 transition hover:text-indigo-600">
-                    {contactInfo.email}
-                  </a>
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-5">
+            <FadeIn>
+              <span
+                className="font-mono text-xs tracking-widest uppercase mb-6 inline-flex items-center gap-2"
+                style={{ color: "var(--accent)" }}
+              >
+                <span style={{ fontSize: "6px" }}>◆</span> 06 / Contact
+              </span>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <h2 className="font-display text-5xl lg:text-6xl leading-tight mb-8 text-white">
+                Let's build<br />
+                <em className="italic">something</em><br />
+                remarkable.
+              </h2>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <p className="text-base leading-relaxed mb-10" style={{ color: "var(--secondary-foreground)", lineHeight: "1.8" }}>
+                Whether you have a project, a partnership, or a new idea, I'm always open to a conversation. Reach out and let's create a professional web experience that delivers.
+              </p>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="space-y-5 mb-10">
+                {[
+                  { label: "Email", value: contactInfo.email, icon: "✉" },
+                  { label: "Phone", value: contactInfo.phone, icon: "✆" },
+                  { label: "Location", value: contactInfo.location, icon: "◎" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex gap-4 items-start px-4 py-3.5 group transition-all duration-200"
+                    style={{
+                      border: "1px solid var(--border)",
+                      backgroundColor: "var(--secondary)",
+                    }}
+                  >
+                    <span style={{ color: "var(--accent)", fontSize: "16px", flexShrink: 0, marginTop: "1px" }}>
+                      {item.icon}
+                    </span>
+                    <div>
+                      <p className="font-mono text-xs tracking-widest uppercase mb-0.5" style={{ color: "var(--muted-foreground)" }}>
+                        {item.label}
+                      </p>
+                      <p className="text-sm text-white">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+            <FadeIn delay={400}>
+              <div>
+                <p className="font-mono text-xs tracking-widest uppercase mb-4" style={{ color: "var(--muted-foreground)" }}>
+                  Reach me on
+                </p>
+                <div className="flex gap-3">
+                  {[
+                    { name: "GitHub", url: contactInfo.github, icon: <FaGithub /> },
+                    { name: "LinkedIn", url: contactInfo.linkedin, icon: <FaLinkedin /> },
+                    { name: "WhatsApp", url: contactInfo.whatsapp, icon: <BsWhatsapp /> },
+                  ].map((platform) => (
+                    <a
+                      key={platform.name}
+                      href={platform.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs tracking-widest uppercase px-4 py-3 transition-all duration-200 flex items-center gap-2"
+                      style={{
+                        border: "1px solid var(--border)",
+                        color: "var(--muted-foreground)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = "var(--accent)";
+                        e.currentTarget.style.color = "var(--accent)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = "var(--border)";
+                        e.currentTarget.style.color = "var(--muted-foreground)";
+                      }}
+                    >
+                      {platform.icon} {platform.name}
+                    </a>
+                  ))}
                 </div>
               </div>
-
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
-                <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
-                  <FaPhoneAlt className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-black">Phone</p>
-                  <a href={`tel:${contactInfo.phone}`} className="mt-1 block text-slate-600 transition hover:text-indigo-600">
-                    {contactInfo.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 rounded-3xl bg-slate-100 p-5">
-                <div className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600 text-white">
-                  <FaMapMarkerAlt className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-black">Location</p>
-                  <p className="mt-1 text-slate-600">{contactInfo.location}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 rounded-[1.75rem] border border-black/10 bg-slate-100 p-6">
-              <p className="text-sm uppercase tracking-[0.32em] text-indigo-600">Reach me on</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600">
-                  <FaGithub className="h-4 w-4" /> GitHub
-                </a>
-                <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600">
-                  <FaLinkedin className="h-4 w-4" /> LinkedIn
-                </a>
-                <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600">
-                  <BsWhatsapp className="h-4 w-4" /> WhatsApp
-                </a>
-              </div>
-            </div>
+            </FadeIn>
           </div>
 
-          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl font-sans text-black">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Message me</p>
-            <h2 className="mt-4 text-3xl font-semibold text-black">Drop a quick brief</h2>
-            <p className="mt-4 text-slate-600">Send the details of your project and I&apos;ll get back to you fast with the next steps.</p>
+          <div className="lg:col-span-7">
+            <FadeIn delay={150}>
+              {submitted ? (
+                <div
+                  className="h-full flex flex-col items-center justify-center text-center py-24"
+                  style={{
+                    border: "1px solid rgba(212,168,83,0.2)",
+                    backgroundColor: "rgba(212,168,83,0.04)",
+                  }}
+                >
+                  <div
+                    className="w-20 h-20 flex items-center justify-center text-3xl mb-6"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(212,168,83,0.2), rgba(212,168,83,0.05))",
+                      border: "1px solid rgba(212,168,83,0.3)",
+                      color: "var(--accent)",
+                    }}
+                  >
+                    ✓
+                  </div>
+                  <h3 className="font-display text-4xl mb-3 text-white">Message sent.</h3>
+                  <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+                    I'll get back to you fast with the next steps.
+                  </p>
+                </div>
+              ) : (
+                <div
+                  className="p-8 lg:p-10"
+                  style={{
+                    border: "1px solid var(--border)",
+                    backgroundColor: "var(--card)",
+                  }}
+                >
+                  <h3 className="font-display text-2xl mb-8 text-white">Drop a quick brief</h3>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid md:grid-cols-2 gap-5">
+                      {[
+                        { id: "name", label: "Your Name", type: "text", placeholder: "Jane Smith" },
+                        { id: "email", label: "Email Address", type: "email", placeholder: "jane@company.com" },
+                      ].map((field) => (
+                        <div key={field.id}>
+                          <label
+                            htmlFor={field.id}
+                            className="block font-mono text-xs tracking-widest uppercase mb-2"
+                            style={{ color: "var(--muted-foreground)" }}
+                          >
+                            {field.label}
+                          </label>
+                          <input
+                            id={field.id}
+                            type={field.type}
+                            placeholder={field.placeholder}
+                            required
+                            value={formData[field.id]}
+                            onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
+                            className="w-full px-4 py-3.5 text-sm outline-none transition-all duration-200"
+                            style={{
+                              backgroundColor: "var(--secondary)",
+                              border: "1px solid var(--border)",
+                              color: "var(--foreground)",
+                            }}
+                            onFocus={(e) => {
+                              e.currentTarget.style.borderColor = "var(--accent)";
+                              e.currentTarget.style.backgroundColor = "rgba(212,168,83,0.04)";
+                            }}
+                            onBlur={(e) => {
+                              e.currentTarget.style.borderColor = "var(--border)";
+                              e.currentTarget.style.backgroundColor = "var(--secondary)";
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </div>
 
-            <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-6">
-              <div className="grid gap-6 sm:grid-cols-2">
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-700">Name</span>
-                  <input type="text" placeholder="John Doe" className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-black outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-                </label>
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-700">Email</span>
-                  <input type="email" placeholder="john@example.com" className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-black outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-                </label>
-              </div>
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block font-mono text-xs tracking-widest uppercase mb-2"
+                        style={{ color: "var(--muted-foreground)" }}
+                      >
+                        Subject
+                      </label>
+                      <input
+                        id="subject"
+                        type="text"
+                        placeholder="Project brief"
+                        required
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full px-4 py-3.5 text-sm outline-none transition-all duration-200"
+                        style={{
+                          backgroundColor: "var(--secondary)",
+                          border: "1px solid var(--border)",
+                          color: "var(--foreground)",
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = "var(--accent)";
+                          e.currentTarget.style.backgroundColor = "rgba(212,168,83,0.04)";
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = "var(--border)";
+                          e.currentTarget.style.backgroundColor = "var(--secondary)";
+                        }}
+                      />
+                    </div>
 
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-slate-700">Subject</span>
-                <input type="text" placeholder="Project brief" className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-black outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-              </label>
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block font-mono text-xs tracking-widest uppercase mb-2"
+                        style={{ color: "var(--muted-foreground)" }}
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Tell me about your project..."
+                        required
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-4 py-3.5 text-sm outline-none resize-none transition-all duration-200"
+                        style={{
+                          backgroundColor: "var(--secondary)",
+                          border: "1px solid var(--border)",
+                          color: "var(--foreground)",
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = "var(--accent)";
+                          e.currentTarget.style.backgroundColor = "rgba(212,168,83,0.04)";
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = "var(--border)";
+                          e.currentTarget.style.backgroundColor = "var(--secondary)";
+                        }}
+                      />
+                    </div>
 
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-slate-700">Message</span>
-                <textarea rows="5" placeholder="Tell me about your project..." className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-black outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-              </label>
-
-              <button type="submit" className="w-full rounded-full bg-indigo-600 px-6 py-4 text-base font-semibold text-white transition hover:bg-indigo-500">
-                Send message
-              </button>
-            </form>
+                    <button
+                      type="submit"
+                      className="w-full font-mono text-sm tracking-widest uppercase py-4 transition-all duration-300 relative overflow-hidden group"
+                      style={{
+                        background: "linear-gradient(135deg, #d4a853, #b8862e)",
+                        color: "var(--accent-foreground)",
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
+                      onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                    >
+                      Send Message →
+                    </button>
+                  </form>
+                </div>
+              )}
+            </FadeIn>
           </div>
         </div>
       </div>

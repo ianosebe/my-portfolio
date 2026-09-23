@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: "Playfair Display", serif;
+}
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --secondary: #121212;
+    --secondary-foreground: #a1a1aa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #d4a853;
+    --accent-foreground: #000000;
+    --border: rgba(255, 255, 255, 0.07);
+    --card: #0d0d0d;
+  }
+}
+
+@keyframes scrollDrop {
+  0% { transform: translateY(-100%); opacity: 0; }
+  30% { opacity: 1; }
+  70% { transform: translateY(150%); opacity: 0; }
+  100% { transform: translateY(150%); opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

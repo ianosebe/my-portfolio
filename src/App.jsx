@@ -11,7 +11,7 @@ import Contacts from './pages/Contacts';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500/30">
+      <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-[#d4af37]/30">
         <TopBar />
         <Navbar />
 

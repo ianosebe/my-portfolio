@@ -9,7 +9,6 @@ const navItems = [
   { name: 'SKILLS', path: '/skills' },
   { name: 'CERTIFICATES', path: '/certificates' },
   { name: 'PROJECTS', path: '/projects' },
-  { name: 'CONTACT', path: '/contact' },
 ];
 
 export default function Navbar() {
@@ -28,19 +27,16 @@ export default function Navbar() {
     <nav className="sticky top-0 z-40 w-full bg-[#050505]/95 backdrop-blur-md border-b border-white/5">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-6 sm:px-6">
         <div className="hidden lg:flex items-center gap-10">
-          {navItems.slice(0, 5).map((item) => (
+          {navItems.map((item) => (
             <NavLink key={item.name} to={item.path} className={linkClass}>
               {item.name}
             </NavLink>
           ))}
-          <NavLink to="/contact" className={linkClass}>
-            CONTACT
-          </NavLink>
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <NavLink
-            to="/contact"
+          <a
+            href="mailto:ianosebe8@gmail.com"
             className="rounded border border-[#d4af37] bg-transparent px-6 py-2 text-sm font-semibold tracking-widest text-[#d4af37] transition hover:bg-[#d4af37] hover:text-black uppercase"
           >
             Hire Me
@@ -79,13 +75,13 @@ export default function Navbar() {
             </NavLink>
           ))}
           <div className="mt-4">
-            <NavLink
-              to="/contact"
+            <a
+              href="mailto:ianosebe8@gmail.com"
               onClick={() => setIsOpen(false)}
               className="block rounded border border-[#d4af37] px-4 py-3 text-center text-sm font-semibold tracking-widest text-[#d4af37] transition hover:bg-[#d4af37] hover:text-black uppercase"
             >
               Hire Me
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
-import About from './pages/About'; // Add this line
+import About from './pages/About';
 import Skills from './pages/Skills';
 import Certificates from './pages/Certificate';
 import Projects from './pages/Projects';
-import Contacts from './pages/Contacts';
+
 function App() {
   return (
     <Router>
@@ -22,7 +22,6 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contacts />} />
             <Route
               path="*"
               element={

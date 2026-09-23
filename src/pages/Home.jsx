@@ -1,17 +1,19 @@
-﻿import Hero from '../components/Hero';
-import About from '../components/About';
-import SkillsSection from '../components/SkillsSection';
-import ProjectSection from '../components/ProjectsSection';
-import ContactsSection from '../components/ContactsSection';
+import Hero from '../components/Hero';
+import About from './About';
+import Skills from './Skills';
+import Projects from './Projects';
+import Certificate from './Certificate';
+import Contacts from './Contacts';
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 text-slate-100">
+    <main className="bg-[var(--background)] text-[var(--foreground)]">
       <Hero />
       <About />
-      <ProjectSection />
-      <SkillsSection />
-      <ContactsSection />
+      <Projects />
+      <Skills />
+      <Certificate />
+      <Contacts />
     </main>
   );
 }
